@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
   spec.module_name = 'folly'
   spec.dependency 'boost-for-react-native', '1.63.0'
   spec.dependency 'DoubleConversionJM', '1.1.6-release'
-  spec.dependency 'glogJM', '0.3.5-release'
+  spec.dependency 'glogJM', 'v0.3.5-release'
   spec.compiler_flags = '-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1'
   spec.source_files = 'folly/String.cpp',
                       'folly/Conv.cpp',
@@ -44,12 +44,15 @@ Pod::Spec.new do |spec|
                         'folly/portability/*.h'
   spec.libraries           = "stdc++"
   spec.pod_target_xcconfig = { "USE_HEADERMAP" => "NO",
-                               "CLANG_CXX_LANGUAGE_STANDARD" => "c++14"}
+                               "CLANG_CXX_LANGUAGE_STANDARD" => "c++14",
+                               "HEADER_SEARCH_PATHS" => "\"$(PODS_TARGET_SRCROOT)\" \"$(PODS_ROOT)/boost-for-react-native\" \"$(PODS_ROOT)/DoubleConversionJM\"" }
 
   # Pinning to the same version as React.podspec.
   spec.platforms = { :ios => "9.0" }
 end
 
 
+#校验指令
+#pod lib lint Folly.podspec --verbose --allow-warnings --use-libraries
 #打包命令
 #pod package Folly.podspec --force --no-mangle --exclude-deps --verbose

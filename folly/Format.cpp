@@ -20,7 +20,7 @@
 #include <folly/CppAttributes.h>
 #include <folly/container/Array.h>
 
-#include <double-conversion/double-conversion.h>
+#include <DoubleConversion/double-conversion.h>
 
 namespace folly {
 namespace detail {
