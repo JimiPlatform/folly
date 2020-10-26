@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
   spec.module_name = 'folly'
   spec.dependency 'boost-for-react-native', '1.63.0'
   spec.dependency 'DoubleConversionJM', '1.1.6-release'
-  spec.dependency 'glogJM', 'v0.3.5-release'
+  spec.dependency 'glogJM', '0.3.5-release'
   spec.compiler_flags = '-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1'
   spec.source_files = 'folly/String.cpp',
                       'folly/Conv.cpp',
