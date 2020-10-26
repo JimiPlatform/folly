@@ -4,8 +4,8 @@
 # LICENSE file in the root directory of this source tree.
 
 Pod::Spec.new do |spec|
-  spec.name = 'Folly'
-  spec.version = '2018.10.22.00'
+  spec.name = 'FollyJM'
+  spec.version = '2018.10.22.00-pre'
   spec.license = { :type => 'Apache License, Version 2.0' }
   spec.homepage = 'https://github.com/JimiPlatform/folly'
   spec.summary = 'folly for iOS ReactNative.'
@@ -14,8 +14,8 @@ Pod::Spec.new do |spec|
   spec.module_name = 'folly'
   spec.dependency 'boost-for-react-native', '1.63.0'
   spec.dependency 'DoubleConversionJM', '1.1.6-release'
-  spec.dependency 'glogJM', '0.3.5-release'
-  spec.compiler_flags = '-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1'
+  spec.dependency 'glogJM', '0.3.5-real'
+  spec.compiler_flags = '-DFOLLY_NO_CONFIG=0 -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1'
   spec.source_files = 'folly/String.cpp',
                       'folly/Conv.cpp',
                       'folly/Demangle.cpp',
@@ -42,10 +42,11 @@ Pod::Spec.new do |spec|
                         'folly/memory/*.h',
                         'folly/memory/detail/*.h',
                         'folly/portability/*.h'
+
   spec.libraries           = "stdc++"
   spec.pod_target_xcconfig = { "USE_HEADERMAP" => "NO",
                                "CLANG_CXX_LANGUAGE_STANDARD" => "c++14",
-                               "HEADER_SEARCH_PATHS" => "\"$(PODS_TARGET_SRCROOT)\" \"$(PODS_ROOT)/boost-for-react-native\" \"$(PODS_ROOT)/DoubleConversionJM\"" }
+                               "HEADER_SEARCH_PATHS" => "\"$(PODS_TARGET_SRCROOT)\" \"$(PODS_ROOT)/boost-for-react-native\" \"$(PODS_ROOT)/DoubleConversionJM\" \"$(PODS_ROOT)/glogJM\"" }
 
   # Pinning to the same version as React.podspec.
   spec.platforms = { :ios => "9.0" }
